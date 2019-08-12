@@ -12,10 +12,34 @@ public class ConsoleCommandManager implements ConsoleCommand {
 
     public ConsoleCommandManager(){
         consoleCommandMap = new HashMap<>();
+        //user
         consoleCommandMap.put("Login", new LoginConsoleCommand());
         consoleCommandMap.put("Register", new RegisterConsoleCommand());
+        //role
         consoleCommandMap.put("ChooseRole", new ChooseRoleConsoleCommand());
+        consoleCommandMap.put("RoleInfo", new RoleInfoConsoleCommand());
+        //map
         consoleCommandMap.put("GetMap",new GetMapConsoleCommand());
+        consoleCommandMap.put("Move",new MoveConsoleCommand());
+        //npc
+        consoleCommandMap.put("TalkToNpc",new TalkToNpcConsoleCommand());
+        //goods
+        consoleCommandMap.put("GetGoods",new GetGoodsConsoleCommand());
+        consoleCommandMap.put("DiscardGoods",new DiscardGoodsConsoleCommand());
+        //skill
+        consoleCommandMap.put("UpgradeSkill",new UpgradeSkillConsoleCommand());
+        consoleCommandMap.put("StudySKill",new StudySkillConsoleCommand());
+        consoleCommandMap.put("RolePK",new RolePKConsoleCommand());
+        consoleCommandMap.put("UseSkill",new UseSkillConsoleCommand());
+        //equip
+        consoleCommandMap.put("AddEquip",new AddEquipConsoleCommand());
+        consoleCommandMap.put("RemoveEquip",new RemoveEquipConsoleCommand());
+        //duplicate
+        consoleCommandMap.put("AttackBoss",new AttackBossConsoleCommand());
+        //shop
+        consoleCommandMap.put("Buy",new BuyConsoleCommand());
+        //chat
+        consoleCommandMap.put("ChatAll",new ChatAllConsoleCommand());
     }
 
     @Override

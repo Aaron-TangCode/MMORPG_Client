@@ -1,6 +1,7 @@
 package com.hailintang.client.console;
 
 import com.google.common.base.Strings;
+import com.hailintang.client.protobuf.protoc.MsgMapInfoProto;
 import com.hailintang.client.protobuf.protoc.MsgUserInfoProto;
 import io.netty.channel.Channel;
 
@@ -21,30 +22,16 @@ public class MoveConsoleCommand implements ConsoleCommand {
         System.out.println("输入目的地：(desc)");
         String desc = scanner.next();
         if (Strings.isNullOrEmpty(desc)){
-            System.out.println("尚未输入账号信息，请重新发送 login 指令");
-            return;
-        }
-
-        // 解析输入的字符串，分割为两个参数
-        String[] strArr = desc.split(",");
-        if (strArr.length != 2){
-            System.out.println("输入的参数有误，请重新发送 login 指令");
-            return;
-        }
-        String username = strArr[0];
-        String password = strArr[1];
-        if (Strings.isNullOrEmpty(username) || Strings.isNullOrEmpty(password)){
-            System.out.println("账号名或密码为空，请重新发送 login 指令");
+            System.out.println("尚未输入指令，请重新发送 Move 指令");
             return;
         }
         //打包成protobuf格式
-        MsgUserInfoProto.RequestUserInfo requestUserInfo = MsgUserInfoProto.RequestUserInfo.newBuilder()
+        MsgMapInfoProto.RequestMapInfo requestMapInfo = MsgMapInfoProto.RequestMapInfo.newBuilder()
+                .setType(MsgMapInfoProto.RequestType.MOVE)
                 .setRequestId(UUID.randomUUID().toString())
-                .setType(MsgUserInfoProto.RequestType.LOGIN)
-                .setUsername(username)
-                .setPassword(password)
+                .setDest(desc)
                 .build();
         //输出
-        channel.writeAndFlush(requestUserInfo);
+        channel.writeAndFlush(requestMapInfo);
     }
 }

@@ -39,7 +39,7 @@ public class LoginConsoleCommand implements ConsoleCommand {
             System.out.println("账号名或密码为空，请重新发送 login 指令");
             return;
         }
-        ProtobufUtil.send(channel);
+//        ProtobufUtil.send(channel);
         //打包成protobuf格式
         MsgUserInfoProto.RequestUserInfo requestUserInfo = MsgUserInfoProto.RequestUserInfo.newBuilder()
                 .setRequestId(UUID.randomUUID().toString())

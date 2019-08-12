@@ -2,9 +2,7 @@ package com.hailintang.client;
 
 import com.hailintang.client.codec.CustomProtobufDecoder;
 import com.hailintang.client.codec.CustomProtobufEncoder;
-import com.hailintang.client.handler.MapHandler;
-import com.hailintang.client.handler.RoleHandler;
-import com.hailintang.client.handler.UserInfoHandler;
+import com.hailintang.client.handler.*;
 import io.netty.channel.ChannelInitializer;
 import io.netty.channel.ChannelPipeline;
 import io.netty.channel.socket.SocketChannel;
@@ -32,9 +30,25 @@ public class ClientInitializer extends ChannelInitializer<SocketChannel> {
         pipeline.addLast("encoder",new CustomProtobufEncoder());
 
         // pipeline.addLast("clientHandler",new ClientHandler());
+        //user
         pipeline.addLast("userInfoHandler",new UserInfoHandler());
+        //role
         pipeline.addLast("roleHandler",new RoleHandler());
+        //map
         pipeline.addLast("mapHandler",new MapHandler());
-
+        //npc
+        pipeline.addLast("npcHandler",new NpcHandler());
+        //goods
+        pipeline.addLast("goodsHandler",new GoodsHandler());
+        //skill
+        pipeline.addLast("skillHandler",new SkillHandler());
+        //equip
+        pipeline.addLast("equipHandler",new EquipHandler());
+        //duplicate
+        pipeline.addLast("duplicateHandler",new DuplicateHandler());
+        //shop
+        pipeline.addLast("shopHandler",new ShopHandler());
+        //chat
+        pipeline.addLast("chatHandler",new ChatHandler());
     }
 }

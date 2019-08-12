@@ -1,6 +1,7 @@
 package com.hailintang.client.handler;
 
 import com.hailintang.client.protobuf.protoc.MsgRoleInfoProto;
+import com.hailintang.client.protobuf.protoc.RoleProto;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.SimpleChannelInboundHandler;
 
@@ -28,7 +29,9 @@ public class RoleHandler extends SimpleChannelInboundHandler<MsgRoleInfoProto.Re
                 System.out.println("欢迎进入游戏世界......");
                 break;
             case ROLEINFO:
-                System.out.println("继续操作......");
+                RoleProto.Role role = responseRoleInfo.getRole();
+                System.out.println("成功获取玩家信息......");
+                System.out.println("【角色名】:"+role.getName());
                 break;
                 default:
                     break;

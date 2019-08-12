@@ -7,14 +7,13 @@ import java.util.UUID;
 
 /**
  * @ClassName ProtobufUtil
- * @Description TODO
+ * @Description 工具类-protobuf协议传输
  * @Author DELL
  * @Date 2019/8/9 18:35
  * @Version 1.0
  */
 public class ProtobufUtil {
     public static void send(Channel channel, IProto iProto) {
-
         //编码
         byte[] result = iProto.encode();
 
