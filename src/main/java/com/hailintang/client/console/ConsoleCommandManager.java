@@ -40,6 +40,8 @@ public class ConsoleCommandManager implements ConsoleCommand {
         consoleCommandMap.put("Buy",new BuyConsoleCommand());
         //chat
         consoleCommandMap.put("ChatAll",new ChatAllConsoleCommand());
+        //email
+        consoleCommandMap.put("SendGoods",new SendGoodsConsoleCommand());
     }
 
     @Override
