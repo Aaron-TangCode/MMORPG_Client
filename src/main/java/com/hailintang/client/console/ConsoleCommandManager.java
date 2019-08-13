@@ -42,6 +42,24 @@ public class ConsoleCommandManager implements ConsoleCommand {
         consoleCommandMap.put("ChatAll",new ChatAllConsoleCommand());
         //email
         consoleCommandMap.put("SendGoods",new SendGoodsConsoleCommand());
+        //trade
+        consoleCommandMap.put("RequestTrade",new RequestTradeConsoleCommand());
+        consoleCommandMap.put("ConfirmTrade",new ConfirmTradeConsoleCommand());
+        consoleCommandMap.put("TradingGoods",new TradingGoodsConsoleCommand());
+        consoleCommandMap.put("TradingMoney",new TradingMoneyConsoleCommand());
+        consoleCommandMap.put("TradeGoods",new TradeGoodsConsoleCommand());
+        //gang
+        consoleCommandMap.put("CreateGang",new CreateGangConsoleCommand());
+        consoleCommandMap.put("JoinGang",new JoinGangConsoleCommand());
+        consoleCommandMap.put("DismissGang",new DismissGangConsoleCommand());
+        consoleCommandMap.put("DonateMoney",new DonateMoneyConsoleCommand());
+        //auction
+        consoleCommandMap.put("Bidding",new BiddingConsoleCommand());
+        consoleCommandMap.put("Recycle",new RecycleConsoleCommand());
+        consoleCommandMap.put("Publish",new PublishConsoleCommand());
+        consoleCommandMap.put("QueryAuction",new QueryAuctionConsoleCommand());
+        //rank
+        consoleCommandMap.put("QueryRank",new QueryRankConsoleCommand());
     }
 
     @Override

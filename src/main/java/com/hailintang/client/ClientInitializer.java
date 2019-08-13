@@ -52,5 +52,13 @@ public class ClientInitializer extends ChannelInitializer<SocketChannel> {
         pipeline.addLast("chatHandler",new ChatHandler());
         //email
         pipeline.addLast("emailHandler",new EmailHandler());
+        //trade
+        pipeline.addLast("tradeHandler",new TradeHandler());
+        //gang
+        pipeline.addLast("gangHandler",new GangHandler());
+        //auction
+        pipeline.addLast("auctionHandler",new AuctionHandler());
+        //rank
+        pipeline.addLast("rankHandler",new RankHandler());
     }
 }
