@@ -18,6 +18,7 @@ public class ConsoleCommandManager implements ConsoleCommand {
         //role
         consoleCommandMap.put("ChooseRole", new ChooseRoleConsoleCommand());
         consoleCommandMap.put("RoleInfo", new RoleInfoConsoleCommand());
+        consoleCommandMap.put("UseGoods",new UseGoodsConsoleCommand());
         //map
         consoleCommandMap.put("GetMap",new GetMapConsoleCommand());
         consoleCommandMap.put("Move",new MoveConsoleCommand());
@@ -28,7 +29,7 @@ public class ConsoleCommandManager implements ConsoleCommand {
         consoleCommandMap.put("DiscardGoods",new DiscardGoodsConsoleCommand());
         //skill
         consoleCommandMap.put("UpgradeSkill",new UpgradeSkillConsoleCommand());
-        consoleCommandMap.put("StudySKill",new StudySkillConsoleCommand());
+        consoleCommandMap.put("StudySkill",new StudySkillConsoleCommand());
         consoleCommandMap.put("RolePK",new RolePKConsoleCommand());
         consoleCommandMap.put("UseSkill",new UseSkillConsoleCommand());
         //equip

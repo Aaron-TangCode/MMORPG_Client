@@ -5,8 +5,7 @@ import com.hailintang.client.protobuf.protoc.RoleProto;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.SimpleChannelInboundHandler;
 
-import static com.hailintang.client.local.RequestRoleInfoType.CHOOSEROLE;
-import static com.hailintang.client.local.RequestRoleInfoType.ROLEINFO;
+import static com.hailintang.client.local.RequestRoleInfoType.*;
 
 /**
  * @ClassName RoleHandler
@@ -31,8 +30,11 @@ public class RoleHandler extends SimpleChannelInboundHandler<MsgRoleInfoProto.Re
             case ROLEINFO:
                 RoleProto.Role role = responseRoleInfo.getRole();
                 System.out.println("成功获取玩家信息......");
-                System.out.println("【角色名】:"+role.getName());
+                System.out.println("当前总血量/总血量："+role.getCurHp()+"/"+role.getTotalHp()+"\t当前魔法值/总魔法值："+role.getCurMp()+"/"+role.getTotalMp()
+                        +"\t攻击力："+role.getAttack()+"\t防御力："+role.getDefend());
                 break;
+            case USEGOODS :
+                //没操作
                 default:
                     break;
         }
