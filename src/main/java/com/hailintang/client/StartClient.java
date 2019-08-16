@@ -21,21 +21,15 @@ public class StartClient {
     public static void main(String[] args) {
         Client client = applicationContext.getBean(Client.class);
         client.start();
-        System.out.println("欢迎进入游戏！登录:Login\t\t注册:Register");
-
+        System.out.println("欢迎进入游戏！登录:Login\t\t注册:Register\t\t帮助文档:Help");
+        //控制中心
         ConsoleCommandManager consoleCommandManager = new ConsoleCommandManager();
-        LoginConsoleCommand loginConsoleCommand = new LoginConsoleCommand();
+        //控制台
         Scanner scanner = new Scanner(System.in);
-
+        //
         while (scanner.hasNext()){
-            // 判断channel中是否属于登录状态
-//            if(LocalUserData.getUserId()<=0){
-//                // 如果为检测到channel中的session，那么调用登录控制台
-//                loginConsoleCommand.exec(scanner, client.getChannel());
-//            }else{
-                // 否则，根据指令调用相应的控制台
+
                 consoleCommandManager.exec(scanner, client.getChannel());
-//            }
 
         }
     }

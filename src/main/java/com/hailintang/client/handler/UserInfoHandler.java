@@ -39,7 +39,9 @@ public class UserInfoHandler extends SimpleChannelInboundHandler<MsgUserInfoProt
         } else if (responseUserInfo.getType().equals(MsgUserInfoProto.RequestType.REGISTER)){
             System.out.println("成功注册用户，用户登录 Login");
         } else if (responseUserInfo.getType().equals(MsgUserInfoProto.RequestType.EXIT)){
-            System.out.println("退出操作");
+            System.out.println("成功退出游戏");
+            LocalUserData.setUserId(0);
+            System.exit(0);
         }
     }
 

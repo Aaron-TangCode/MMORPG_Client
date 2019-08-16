@@ -8,14 +8,14 @@ package com.hailintang.client.local;
  * @Version 1.0
  */
 public class LocalUserData {
-    public static long USERID = 0L;
+    public static int USERID = 0;
 
 
-    public static void setUserId(long userId){
+    public static void setUserId(int userId){
         USERID = userId;
     }
 
-    public static long getUserId(){
+    public static int getUserId(){
         return USERID;
     }
 }

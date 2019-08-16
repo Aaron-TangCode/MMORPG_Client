@@ -41,6 +41,7 @@ public class ConsoleCommandManager implements ConsoleCommand {
         consoleCommandMap.put("Buy",new BuyConsoleCommand());
         //chat
         consoleCommandMap.put("ChatAll",new ChatAllConsoleCommand());
+        consoleCommandMap.put("ChatSomeone",new ChatSomeoneConsoleCommand());
         //email
         consoleCommandMap.put("SendGoods",new SendGoodsConsoleCommand());
         //trade
@@ -61,6 +62,10 @@ public class ConsoleCommandManager implements ConsoleCommand {
         consoleCommandMap.put("QueryAuction",new QueryAuctionConsoleCommand());
         //rank
         consoleCommandMap.put("QueryRank",new QueryRankConsoleCommand());
+        //help
+        consoleCommandMap.put("Help",new HelpConsoleCommand());
+        //exit
+        consoleCommandMap.put("Exit",new ExitConsoleCommand());
     }
 
     @Override

@@ -6,6 +6,7 @@ import com.google.protobuf.MessageLite;
 import io.netty.bootstrap.Bootstrap;
 import io.netty.channel.Channel;
 import io.netty.channel.ChannelFuture;
+import io.netty.channel.ChannelFutureListener;
 import io.netty.channel.EventLoopGroup;
 import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.nio.NioSocketChannel;
@@ -15,6 +16,7 @@ import org.springframework.stereotype.Component;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.concurrent.TimeUnit;
 
 /**
  * @ClassName Client
@@ -25,33 +27,47 @@ import java.io.InputStreamReader;
  */
 @Component
 public class Client {
-//    public static void main(String[] args) {
-//        Client client = new Client();
-//        client.start();
-//    }
+
+    private Bootstrap bootstrap;
+
     private Channel channel;
+
     public void start() {
         EventLoopGroup clientGroup = new NioEventLoopGroup();
 
-        try {
-            Bootstrap bootstrap = new Bootstrap();
+        bootstrap = new Bootstrap();
 
-            bootstrap.group(clientGroup).channel(NioSocketChannel.class)
-                    .handler(new ClientInitializer());
+        bootstrap.group(clientGroup).channel(NioSocketChannel.class)
+                .handler(new ClientInitializer());
 
-            //channel = bootstrap.connect("localhost", 8899).sync().channel();
-            ChannelFuture future = bootstrap.connect("localhost", 8899).sync();
-            if (future.isSuccess()){
-                System.out.println("成功连接服务器......");
-            }
-            channel = future.channel();
-//            BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
-//            for (;;){
-//                channel.writeAndFlush(bufferedReader.readLine()+"\r\n");
-//            }
-        } catch (InterruptedException e) {
-            e.printStackTrace();
+        doConnect();
+    }
+
+    /**
+     * 重连服务器操作
+     */
+    protected void doConnect(){
+        if (channel != null && channel.isActive()){
+            return;
         }
+
+        ChannelFuture channelFuture = bootstrap.connect("localhost",8899);
+
+        channelFuture.addListener(new ChannelFutureListener() {
+            @Override
+            public void operationComplete(ChannelFuture channelFuture) throws Exception {
+                if (channelFuture.isSuccess()){
+                    channel = channelFuture.channel();
+                    System.out.println(("Connect to Server Successfully!"));
+                }else {
+                    System.out.println(("Failed to connect to server, try connect after 5s"));
+
+                    channelFuture.channel().eventLoop().schedule(() -> {
+                        doConnect();
+                    }, 5, TimeUnit.SECONDS);
+                }
+            }
+        });
     }
     public Channel getChannel(){
         return channel;
