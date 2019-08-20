@@ -2,7 +2,7 @@ package com.hailintang.client.local;
 
 /**
  * @ClassName LocalUserData
- * @Description TODO
+ * @Description 本地用户数据
  * @Author DELL
  * @Date 2019/8/8 16:07
  * @Version 1.0

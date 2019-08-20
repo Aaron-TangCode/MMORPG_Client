@@ -2,17 +2,25 @@ package com.hailintang.client;
 
 import com.hailintang.client.codec.CustomProtobufDecoder;
 import com.hailintang.client.codec.CustomProtobufEncoder;
-import com.hailintang.client.handler.*;
+import com.hailintang.client.handler.auction.AuctionHandler;
+import com.hailintang.client.handler.chat.ChatHandler;
+import com.hailintang.client.handler.duplicate.DuplicateHandler;
+import com.hailintang.client.handler.email.EmailHandler;
+import com.hailintang.client.handler.equip.EquipHandler;
+import com.hailintang.client.handler.gang.GangHandler;
+import com.hailintang.client.handler.goods.GoodsHandler;
+import com.hailintang.client.handler.map.MapHandler;
+import com.hailintang.client.handler.npc.NpcHandler;
+import com.hailintang.client.handler.rank.RankHandler;
+import com.hailintang.client.handler.role.RoleHandler;
+import com.hailintang.client.handler.shop.ShopHandler;
+import com.hailintang.client.handler.skill.SkillHandler;
+import com.hailintang.client.handler.task.TaskHandler;
+import com.hailintang.client.handler.trade.TradeHandler;
+import com.hailintang.client.handler.user.UserInfoHandler;
 import io.netty.channel.ChannelInitializer;
 import io.netty.channel.ChannelPipeline;
 import io.netty.channel.socket.SocketChannel;
-import io.netty.handler.codec.protobuf.ProtobufDecoder;
-import io.netty.handler.codec.protobuf.ProtobufEncoder;
-import io.netty.handler.codec.protobuf.ProtobufVarint32FrameDecoder;
-import io.netty.handler.codec.protobuf.ProtobufVarint32LengthFieldPrepender;
-import io.netty.handler.codec.string.StringDecoder;
-import io.netty.handler.codec.string.StringEncoder;
-import io.netty.util.CharsetUtil;
 
 /**
  * @ClassName ClientInitializer
@@ -62,5 +70,7 @@ public class ClientInitializer extends ChannelInitializer<SocketChannel> {
         pipeline.addLast("auctionHandler",new AuctionHandler());
         //rank
         pipeline.addLast("rankHandler",new RankHandler());
+        //task
+        pipeline.addLast("TaskHandler",new TaskHandler());
     }
 }

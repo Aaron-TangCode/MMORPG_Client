@@ -8,11 +8,15 @@ import io.netty.handler.codec.ByteToMessageDecoder;
 
 import java.util.List;
 
+/**
+ * 解码器
+ */
 public class CustomProtobufDecoder extends ByteToMessageDecoder {
 
     @Override
     protected void decode(ChannelHandlerContext ctx, ByteBuf in, List<Object> out) throws Exception {
-        while (in.readableBytes() > 4) { // 如果可读长度小于包头长度，退出。
+        // 如果可读长度小于包头长度，退出。
+        while (in.readableBytes() > 4) {
             in.markReaderIndex();
 
             // 获取包头中的body长度
@@ -64,6 +68,7 @@ public class CustomProtobufDecoder extends ByteToMessageDecoder {
         if (messageLite != null){
             return messageLite.getParserForType().parseFrom(array, offset, length);
         }
-        return null; // or throw exception
+        // or throw exception
+        return null;
     }
 }

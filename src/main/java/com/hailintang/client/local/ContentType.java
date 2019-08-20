@@ -1,5 +1,8 @@
 package com.hailintang.client.local;
 
+/**
+ * 内容类型
+ */
 public class ContentType {
     public static final String LOGIN_SUCCESS = "登录成功！\n";
     public static final String LOGIN_FAIL = "登录失败！\n";

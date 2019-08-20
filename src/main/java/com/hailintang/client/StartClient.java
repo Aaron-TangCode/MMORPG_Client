@@ -1,7 +1,6 @@
 package com.hailintang.client;
 
 import com.hailintang.client.console.ConsoleCommandManager;
-import com.hailintang.client.console.LoginConsoleCommand;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.stereotype.Component;

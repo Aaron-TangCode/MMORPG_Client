@@ -7,6 +7,9 @@ import io.netty.channel.ChannelHandler;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.handler.codec.MessageToByteEncoder;
 
+/**
+ * 解码器
+ */
 @ChannelHandler.Sharable
 public class CustomProtobufEncoder extends MessageToByteEncoder<MessageLite> {
 
@@ -34,7 +37,8 @@ public class CustomProtobufEncoder extends MessageToByteEncoder<MessageLite> {
         byte[] header = new byte[4];
         header[0] = (byte) (bodyLength & 0xff);
         header[1] = (byte) ((bodyLength >> 8) & 0xff);
-        header[2] = 0; // 保留字段
+        // 保留字段
+        header[2] = 0;
         header[3] = b;
 
         return header;
