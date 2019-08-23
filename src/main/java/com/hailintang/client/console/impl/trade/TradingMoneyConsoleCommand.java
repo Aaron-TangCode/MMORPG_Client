@@ -20,7 +20,7 @@ public class TradingMoneyConsoleCommand implements ConsoleCommand {
     @Override
     public void exec(Scanner scanner, Channel channel) {
         //提示信息
-        System.out.println("请输入确认码和数量:(uuid,number)");
+        System.out.println("请输入确认码和金币:(uuid,money)");
 
         String accountInfo = scanner.next();
 

@@ -20,7 +20,7 @@ public class ConfirmTradeConsoleCommand implements ConsoleCommand {
     @Override
     public void exec(Scanner scanner, Channel channel) {
         //提示信息
-        System.out.println("请输入角色和确认码：（roleName,uuid）");
+        System.out.println("请输入请求交易角色名和确认码：（roleName,uuid）");
 
         String confirm = scanner.next();
 

@@ -6,7 +6,13 @@ option java_package = "com.hailintang.client.protobuf.protoc";
 option java_outer_classname = "MsgBossInfoProto";
 
 enum RequestType{
-    ATTACKBOSS = 0;
+    ATTACKBOSS = 0; //攻击boss
+    CREATETEAM = 1; //创建队伍
+    JOINTEAM = 2;   //加入队伍
+    EXITTEAM = 3;   //退出队伍
+    DISMISSTEAM = 4;    //解散队伍
+    QUERYTEAM = 5;      //查询队伍
+    TEAMATTACKBOSS = 6; //团队打Boss
 }
 
 message RequestBossInfo{
@@ -14,16 +20,15 @@ message RequestBossInfo{
     int32 userId = 2;           // 请求的uid
     string bossName = 3;            //目的地
     RequestType type = 4;      // 请求类型
-    string skillName = 5;
-    string mapName = 6;
+    string skillName = 5;       //技能名称
+    string mapName = 6;         //地图名称
+    string teamName = 7;        //队伍名称
 }
 
 message ResponseBossInfo{
     int32 result = 1;           // 返回结果
     int32 userId = 2;           // 返回的uid
     string content = 3;         // 返回内容
-
     RequestType type = 4;       // 返回类型
-
     Role role = 5;          // 用户角色
 }

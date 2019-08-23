@@ -85,7 +85,7 @@ public class HelpConsoleCommand implements ConsoleCommand {
         sb.append("排行榜相关：\n");
         sb.append("\t QueryRank：排行榜\n");
 
-        sb.append("排行榜相关：\n");
+        sb.append("退出游戏相关：\n");
         sb.append("\t Exit：退出当前游戏\n");
 
         sb.append("任务相关：\n");

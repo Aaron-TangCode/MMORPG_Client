@@ -6,10 +6,11 @@ import com.hailintang.client.console.impl.auction.QueryAuctionConsoleCommand;
 import com.hailintang.client.console.impl.auction.RecycleConsoleCommand;
 import com.hailintang.client.console.impl.chat.ChatAllConsoleCommand;
 import com.hailintang.client.console.impl.chat.ChatSomeoneConsoleCommand;
-import com.hailintang.client.console.impl.duplicate.AttackBossConsoleCommand;
+import com.hailintang.client.console.impl.duplicate.*;
 import com.hailintang.client.console.impl.email.SendGoodsConsoleCommand;
 import com.hailintang.client.console.impl.equip.AddEquipConsoleCommand;
 import com.hailintang.client.console.impl.equip.RemoveEquipConsoleCommand;
+import com.hailintang.client.console.impl.equip.ShowEquipConsoleCommand;
 import com.hailintang.client.console.impl.exit.ExitConsoleCommand;
 import com.hailintang.client.console.impl.gang.CreateGangConsoleCommand;
 import com.hailintang.client.console.impl.gang.DismissGangConsoleCommand;
@@ -17,6 +18,7 @@ import com.hailintang.client.console.impl.gang.DonateMoneyConsoleCommand;
 import com.hailintang.client.console.impl.gang.JoinGangConsoleCommand;
 import com.hailintang.client.console.impl.goods.DiscardGoodsConsoleCommand;
 import com.hailintang.client.console.impl.goods.GetGoodsConsoleCommand;
+import com.hailintang.client.console.impl.goods.ShowGoodsConsoleCommand;
 import com.hailintang.client.console.impl.help.HelpConsoleCommand;
 import com.hailintang.client.console.impl.map.GetMapConsoleCommand;
 import com.hailintang.client.console.impl.map.MoveConsoleCommand;
@@ -64,6 +66,7 @@ public class ConsoleCommandManager implements ConsoleCommand {
         //goods
         consoleCommandMap.put("GetGoods",new GetGoodsConsoleCommand());
         consoleCommandMap.put("DiscardGoods",new DiscardGoodsConsoleCommand());
+        consoleCommandMap.put("ShowGoods",new ShowGoodsConsoleCommand());
         //skill
         consoleCommandMap.put("UpgradeSkill",new UpgradeSkillConsoleCommand());
         consoleCommandMap.put("StudySkill",new StudySkillConsoleCommand());
@@ -72,8 +75,15 @@ public class ConsoleCommandManager implements ConsoleCommand {
         //equip
         consoleCommandMap.put("AddEquip",new AddEquipConsoleCommand());
         consoleCommandMap.put("RemoveEquip",new RemoveEquipConsoleCommand());
+        consoleCommandMap.put("ShowEquip",new ShowEquipConsoleCommand());
         //duplicate
         consoleCommandMap.put("AttackBoss",new AttackBossConsoleCommand());
+        consoleCommandMap.put("TeamAttackBoss",new TeamAttackBossConsoleCommand());
+        consoleCommandMap.put("QueryTeam",new QueryTeamConsoleCommand());
+        consoleCommandMap.put("CreateTeam",new CreateTeamConsoleCommand());
+        consoleCommandMap.put("JoinTeam",new JoinTeamConsoleCommand());
+        consoleCommandMap.put("ExitTeam",new ExitTeamConsoleCommand());
+        consoleCommandMap.put("DismissTeam",new DismissTeamConsoleCommand());
         //shop
         consoleCommandMap.put("Buy",new BuyConsoleCommand());
         //chat
