@@ -43,7 +43,6 @@ public class HelpConsoleCommand implements ConsoleCommand {
         sb.append("\t UpgradeSkill：升级技能\n");
         sb.append("\t StudySkill：学习新技能\n");
         sb.append("\t RolePK：角色PK\n");
-        sb.append("\t UseSkill：释放技能\n");
         //equip
         sb.append("装备相关：\n");
         sb.append("\t AddEquip：装备武器\n");

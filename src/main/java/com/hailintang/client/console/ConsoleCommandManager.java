@@ -71,19 +71,19 @@ public class ConsoleCommandManager implements ConsoleCommand {
         consoleCommandMap.put("UpgradeSkill",new UpgradeSkillConsoleCommand());
         consoleCommandMap.put("StudySkill",new StudySkillConsoleCommand());
         consoleCommandMap.put("RolePK",new RolePKConsoleCommand());
-        consoleCommandMap.put("UseSkill",new UseSkillConsoleCommand());
         //equip
         consoleCommandMap.put("AddEquip",new AddEquipConsoleCommand());
         consoleCommandMap.put("RemoveEquip",new RemoveEquipConsoleCommand());
         consoleCommandMap.put("ShowEquip",new ShowEquipConsoleCommand());
         //duplicate
-        consoleCommandMap.put("AttackBoss",new AttackBossConsoleCommand());
-        consoleCommandMap.put("TeamAttackBoss",new TeamAttackBossConsoleCommand());
+        consoleCommandMap.put("EnterDuplicate",new EnterDuplicateConsoleCommand());
+        consoleCommandMap.put("TeamEnterDuplicate",new TeamEnterDuplicateConsoleCommand());
         consoleCommandMap.put("QueryTeam",new QueryTeamConsoleCommand());
         consoleCommandMap.put("CreateTeam",new CreateTeamConsoleCommand());
         consoleCommandMap.put("JoinTeam",new JoinTeamConsoleCommand());
         consoleCommandMap.put("ExitTeam",new ExitTeamConsoleCommand());
         consoleCommandMap.put("DismissTeam",new DismissTeamConsoleCommand());
+        consoleCommandMap.put("UseSkillAttackBoss",new UseSkillAttackBossConsoleCommand());
         //shop
         consoleCommandMap.put("Buy",new BuyConsoleCommand());
         //chat
