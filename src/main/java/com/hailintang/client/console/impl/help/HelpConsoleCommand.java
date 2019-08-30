@@ -38,6 +38,7 @@ public class HelpConsoleCommand implements ConsoleCommand {
         sb.append("背包相关：\n");
         sb.append("\t GetGoods：获取物品或装备\n");
         sb.append("\t DiscardGoods：丢弃物品或装备\n");
+        sb.append("\t ShowGoods：显示玩家装备或物品\n");
         //skill
         sb.append("技能相关：\n");
         sb.append("\t UpgradeSkill：升级技能\n");
@@ -47,9 +48,17 @@ public class HelpConsoleCommand implements ConsoleCommand {
         sb.append("装备相关：\n");
         sb.append("\t AddEquip：装备武器\n");
         sb.append("\t RemoveEquip：移除武器\n");
+        sb.append("\t ShowEquip：展示武器\n");
         //duplicate
         sb.append("副本相关：\n");
-        sb.append("\t AttackBoss：刷副本\n");
+        sb.append("\t EnterDuplicate：（单人）进入副本\n");
+        sb.append("\t TeamEnterDuplicate：（组队）进入副本\n");
+        sb.append("\t QueryTeam：查询队伍\n");
+        sb.append("\t CreateTeam：创建队伍\n");
+        sb.append("\t JoinTeam：加入队伍\n");
+        sb.append("\t ExitTeam：退出队伍\n");
+        sb.append("\t DismissTeam：解散队伍\n");
+        sb.append("\t UseSkillAttackBoss：使用技能攻击boss\n");
         //shop
         sb.append("商店相关：\n");
         sb.append("\t Buy：购买装备或物品\n");
@@ -63,11 +72,12 @@ public class HelpConsoleCommand implements ConsoleCommand {
 
         //trade
         sb.append("交易相关：\n");
+        sb.append("\t TradeGoods：交易\n");
         sb.append("\t RequestTrade：请求交易\n");
         sb.append("\t ConfirmTrade：确认交易\n");
         sb.append("\t TradingGoods：交易物品\n");
         sb.append("\t TradingMoney：交易金额\n");
-        sb.append("\t TradeGoods：交易\n");
+
         //gang
         sb.append("工会相关：\n");
         sb.append("\t CreateGang：创建工会\n");

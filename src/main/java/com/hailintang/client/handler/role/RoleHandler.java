@@ -25,7 +25,7 @@ public class RoleHandler extends SimpleChannelInboundHandler<MsgRoleInfoProto.Re
 
         switch (typeNum) {
             case CHOOSEROLE :
-                System.out.println("欢迎进入游戏世界......");
+                System.out.println("成功注册角色，请重新登录......");
                 break;
             case ROLEINFO:
                 RoleProto.Role role = responseRoleInfo.getRole();

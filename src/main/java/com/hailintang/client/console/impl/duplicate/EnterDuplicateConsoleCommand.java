@@ -18,7 +18,7 @@ import java.util.Scanner;
 public class EnterDuplicateConsoleCommand implements ConsoleCommand {
     @Override
     public void exec(Scanner scanner, Channel channel) {
-        System.out.println("请输入地图名称，技能名称(mapName)");
+        System.out.println("请输入地图名称(mapName)");
         String mapName = scanner.next();
 
         if (Strings.isNullOrEmpty(mapName)){

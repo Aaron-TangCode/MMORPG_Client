@@ -108,7 +108,7 @@ public class ConsoleCommandManager implements ConsoleCommand {
         consoleCommandMap.put("Publish",new PublishConsoleCommand());
         consoleCommandMap.put("QueryAuction",new QueryAuctionConsoleCommand());
         //rank
-        consoleCommandMap.put("QueryRank",new QueryRankConsoleCommand());
+        consoleCommandMap.put("Rank",new QueryRankConsoleCommand());
         //help
         consoleCommandMap.put("Help",new HelpConsoleCommand());
         //exit

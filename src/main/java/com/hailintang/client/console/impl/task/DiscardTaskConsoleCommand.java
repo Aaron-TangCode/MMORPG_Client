@@ -30,6 +30,7 @@ public class DiscardTaskConsoleCommand implements ConsoleCommand {
         MsgTaskInfoProto.RequestTaskInfo requestTaskInfo = MsgTaskInfoProto.RequestTaskInfo.newBuilder()
                 .setType(MsgTaskInfoProto.RequestType.DISCARDTASK)
                 .setRequestId(UUID.randomUUID().toString())
+                .setTaskId(taskId)
                 .build();
         //输出
         channel.writeAndFlush(requestTaskInfo);
