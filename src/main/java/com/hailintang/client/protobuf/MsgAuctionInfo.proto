@@ -1,7 +1,6 @@
 syntax = "proto3";
 import "Role.proto";
-//protoc --proto_path=src\main\java\com\game\protobuf --java_out=src\main\java src\main\java\com\game\protobuf\MsgRoleInfo.proto
-
+//protoc --proto_path=src\main\java\com\hailintang\client\protobuf --java_out=src\main\java src\main\java\com\hailintang\client\protobuf\MsgAuctionInfo.proto
 option java_package = "com.hailintang.client.protobuf.protoc";
 option java_outer_classname = "MsgAuctionInfoProto";
 
